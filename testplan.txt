@@ -1,0 +1,35 @@
+John Abrams - jsa109 | Chris Zachariah - cvz2
+4/3/2019
+CS 214 - Systems Programming
+Asst2 - fileCompressor
+
+Testplan:
+
+We ran a myriad of tests on our program. While we don’t provide the specific command line input here, we do describe general inputs
+used to ensure that our program is robust.
+	
+	General Inputs:	
+		- different combinations of flags and arguments in the command line to thoroughly test our code 
+		  to see how it handles incorrect inputs and such
+			- out code should halt when there is wrong input or not enough/too many inputs are given
+			- should print to STDOUT error messages
+
+		- used a simple text file with simple words like "This is a test" to test the -b , -c and -d 
+		  flags in the program
+			- should receive no errors from the program and the files should be manipulated by the program
+			  efficiently
+			- on compress, a <fileName>.hcz file should appear within the same directory 
+			- on decompress, the new file should match the original file char for char including all delimiters
+
+		- made a complex file which contained symbols, enormous words, and escape characters  
+			- the program should have no difficulty tokenizing the words separated from the delimiters
+
+		- run the program with multiple files within the same folder and used each of the flags to make a 
+		  HuffmanCodebook, compressed file and decompressed file
+			- program should run through this test easily
+			- before making a HuffmanCodebook, the program should find out if there is another one within the same
+			  directory and delete it to ensure correctness when compressing/decompress ing next file/folder
+		
+		- Use the -R flag and a directory 
+			- program should recursively go through all the files and subdirectories and make the HuffmanCodebook or 
+			  compress or decompress any regular files that are found
